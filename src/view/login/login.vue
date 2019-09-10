@@ -144,12 +144,12 @@ export default {
         that.verVal = drawCode();
         // 绘制验证码
         function drawCode(str) {
-          var canvas = document.getElementById("verifyCanvas"); //获取HTML端画布
-          var context = canvas.getContext("2d"); //获取画布2D上下文
-          context.fillStyle = "cornflowerblue"; //画布填充色
-          context.fillRect(0, 0, canvas.width, canvas.height); //清空画布
-          context.fillStyle = "white"; //设置字体颜色
-          context.font = "25px Arial"; //设置字体
+          var canvas = document.getElementById("verifyCanvas"); // 获取HTML端画布
+          var context = canvas.getContext("2d"); // 获取画布2D上下文
+          context.fillStyle = "cornflowerblue"; // 画布填充色
+          context.fillRect(0, 0, canvas.width, canvas.height); // 清空画布
+          context.fillStyle = "white"; // 设置字体颜色
+          context.font = "25px Arial"; // 设置字体
           var rand = new Array();
           var x = new Array();
           var y = new Array();
@@ -161,7 +161,7 @@ export default {
             context.fillText(rand[i], x[i], y[i]);
           }
           str = rand.join("").toUpperCase();
-          //画3条随机线
+          // 画3条随机线
           for (var i = 0; i < 3; i++) {
             drawline(canvas, context);
           }
@@ -178,14 +178,14 @@ export default {
           context.moveTo(
             Math.floor(Math.random() * canvas.width),
             Math.floor(Math.random() * canvas.height)
-          ); //随机线的起点x坐标是画布x坐标0位置，y坐标是画布高度的随机数
+          ); // 随机线的起点x坐标是画布x坐标0位置，y坐标是画布高度的随机数
           context.lineTo(
             Math.floor(Math.random() * canvas.width),
             Math.floor(Math.random() * canvas.height)
-          ); //随机线的终点x坐标是画布宽度，y坐标是画布高度的随机数
-          context.lineWidth = 0.5; //随机线宽
-          context.strokeStyle = "rgba(50,50,50,0.3)"; //随机线描边属性
-          context.stroke(); //描边，即起点描到终点
+          ); // 随机线的终点x坐标是画布宽度，y坐标是画布高度的随机数
+          context.lineWidth = 0.5; // 随机线宽
+          context.strokeStyle = "rgba(50,50,50,0.3)"; // 随机线描边属性
+          context.stroke(); // 描边，即起点描到终点
         }
         // 随机点(所谓画点其实就是画1px像素的线，方法不再赘述)
         function drawDot(canvas, context) {

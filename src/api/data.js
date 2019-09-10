@@ -20,15 +20,6 @@ export const errorReq = () => {
     method: 'post'
   })
 }
-
-export const saveErrorLogger = info => {
-  return axios.request({
-    url: 'save_error_logger',
-    data: info,
-    method: 'post'
-  })
-}
-
 export const uploadImg = formData => {
   return axios.request({
     url: 'image/upload',
